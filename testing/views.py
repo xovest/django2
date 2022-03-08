@@ -6,5 +6,7 @@ from .models import Something, Item
 
 def index(res, id):
   s = Something.objects.get(id=id)
-  item = s.item_set.get(id=1)
-  return HttpResponse("<h1>yo %s</h1><br></br><p>%s hah</p>" %(s.name, str(item.text)))
+  return render(res, "testing/base.html", {})
+
+def home(res):
+  return render(res, "testing/home.html", {})
